@@ -49,10 +49,22 @@ def player_guesscol():
 
 def play_game():
     global no_of_ships, no_of_attempts, no_of_hits
+
+    choose_level = ["1", "2", "3"]
+    selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3)")
+    while selection not in choose_level:
+        selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3)")
+    else level = int(selection)
+    if level == 1:
+        no_of_attempts = 30
+    if level == 2:
+        no_of_attempts = 20
+    if level == 3:
+        no_of_attempts = 10
     target_grid = create_grid(9)
     player_grid = create_grid(9)
     no_of_ships = 1
-    no_of_attempts = 5
+    # no_of_attempts = 5
     no_of_hits = 0
     put_ships(target_grid)
     print_grid(target_grid)
