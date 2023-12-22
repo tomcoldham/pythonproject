@@ -62,11 +62,13 @@ def print_endgame():
 command = ""
 print("""
 Welcome to my battleships game!
-Please type "help" to see how the
-game is played before starting.
+To start the game type 'start',
+to exit the game type 'quit'
+and if you need a brief tutorial 
+on how the game works type 'help'
 """)
 while True:
-    command = input("> ")
+    command = input("> ").lower()
     if command == "start":
         play_game()
         print_endgame()
@@ -74,7 +76,15 @@ while True:
         exit()
     elif command == "help":
         print("""
-generic test
+In battleships you will have a certain
+ammount of shots to take. The aim of the game
+is to correctly guess the coordinates
+of the computers randomly placed battleship locations.
+Simply type a number for the row,then column and 
+hit enter to guess a location. if you run out of shots before
+all of the ships are found, you lose. 
+If you manage to hit all of the ships before your run out of 
+hits then you win!
         """)
     else:
-        print("Please enter start, quit or help")
+        print("Dont recgonise input! Please enter start, quit or help")
