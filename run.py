@@ -29,9 +29,11 @@ no_of_ships = 5
 put_ships(target_grid)
 print_grid(target_grid)
 player_try=player_guess()
-
-
-if target_grid[player_try[0]][player_try[1]] == 'X':
+if player_grid[player_try[0]][player_try[1]] == 'X':
+    print("You have already sunk this ship!")
+elif player_grid[player_try[0]][player_try[1]] == 'O':
+    print("You have already tried this co-ordinate")
+elif target_grid[player_try[0]][player_try[1]] == 'X':
     print("Target hit!")
     player_grid[player_try[0]][player_try[1]] = 'X'
 else:
