@@ -14,9 +14,14 @@ def put_ships(grid):
         target_row, target_column = random.randint(0, 8), random.randint(0, 8)
         grid[target_row][target_column] = 'X'
 
-# function for player guessing ships locationdef player_guess():
+# function for player guessing ships location
+def player_guess():
+    row_guess = int(input("please enter target guess row number: " ))
+    column_guess = int(input("please enter target guess column number: " ))
+    return row_guess,column_guess
 
 target_grid = create_grid(9)
 no_of_ships = 5
 put_ships(target_grid)
 print_grid(target_grid)
+player_guess()
