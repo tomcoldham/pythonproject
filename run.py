@@ -23,15 +23,20 @@ def player_guess():
     column_guess -= 1
     return row_guess,column_guess
 
+def print_endgame():
+
+
 target_grid = create_grid(9)
 player_grid = create_grid(9)
 no_of_ships = 5
+no_of_attempts = 5
+no_of_hits = 0
 put_ships(target_grid)
 print_grid(target_grid)
 
 
 
-no_of_attempts = 5
+
 while no_of_attempts > 0:
     print('    1   2   3   4   5   6   7   8   9')
     print_grid(player_grid)
@@ -42,6 +47,7 @@ while no_of_attempts > 0:
         print(f"You have already tried this coordinate! you have {no_of_attempts} shots left.")
     elif target_grid[player_try[0]][player_try[1]] == 'X':
         print(f"Target hit! you have {no_of_attempts} shots left.")
+        no_of_hits += 1
         no_of_attempts -= 1
         player_grid[player_try[0]][player_try[1]] = 'X'
     else:
@@ -49,3 +55,4 @@ while no_of_attempts > 0:
         no_of_attempts -= 1
         player_grid[player_try[0]][player_try[1]] = 'O'
 
+# end of game message
