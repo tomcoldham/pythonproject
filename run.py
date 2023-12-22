@@ -54,7 +54,8 @@ def play_game():
     selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3)")
     while selection not in choose_level:
         selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3)")
-    else level = int(selection)
+    else:
+        level = int(selection)
     if level == 1:
         no_of_attempts = 30
     if level == 2:
