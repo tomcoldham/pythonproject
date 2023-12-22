@@ -1,4 +1,5 @@
 import random
+import time
 # function for creating grid
 def create_grid(size):
     return[['-' for _ in range(size)]for _ in range (size)]
@@ -10,6 +11,7 @@ def print_grid(grid):
     
 # function for placing ships on grid with random number generator
 def put_ships(grid):
+    random.seed(time.time())
     for target in range(no_of_ships):
         target_row, target_column = random.randint(0, 8), random.randint(0, 8)
         grid[target_row][target_column] = 'X'
