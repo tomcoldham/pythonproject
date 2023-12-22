@@ -5,9 +5,9 @@ def create_grid(size):
 
 # function for printing grid
 def print_grid(grid):
-    for row in(grid):
-        print(" | ". join(row))
-
+    for i, row in enumerate(grid, start=1):
+        print(f"{i} | {' | '.join(row)}")
+    
 # function for placing ships on grid with random number generator
 def put_ships(grid):
     for target in range(no_of_ships):
