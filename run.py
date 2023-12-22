@@ -60,16 +60,21 @@ def print_endgame():
         print(f"you sunk {no_of_hits} out of {no_of_ships} ships, better luck next time")
 
 command = ""
+print("""
+Welcome to my battleships game!
+Please type "help" to see how the
+game is played before starting.
+""")
 while True:
     command = input("> ")
-    if command = "start":
+    if command == "start":
         play_game()
         print_endgame()
-    elif command = "quit":
+    elif command == "quit":
         exit()
-    elif command = "help":
+    elif command == "help":
         print("""
-        generic test
+generic test
         """)
     else:
         print("Please enter start, quit or help")
