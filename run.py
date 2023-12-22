@@ -25,3 +25,6 @@ no_of_ships = 5
 put_ships(target_grid)
 print_grid(target_grid)
 player_guess()
+
+if target_grid[row_guess][column_guess] == 'X':
+    print("target hit!")
