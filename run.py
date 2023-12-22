@@ -23,38 +23,39 @@ def player_guess():
     column_guess -= 1
     return row_guess,column_guess
 
-# def print_endgame():
+def play_game():
+    target_grid = create_grid(9)
+    player_grid = create_grid(9)
+    no_of_ships = 1
+    no_of_attempts = 5
+    no_of_hits = 0
+    put_ships(target_grid)
+    print_grid(target_grid)
+    while no_of_attempts > 0:
+        if no_of_hits == no_of_ships:
+            break
+        print('    1   2   3   4   5   6   7   8   9')
+        print_grid(player_grid)
+        player_try=player_guess()
+        if player_grid[player_try[0]][player_try[1]] == 'X':
+            print(f"You have already hit this ship! you have {no_of_attempts} shots left.")
+        elif player_grid[player_try[0]][player_try[1]] == 'O':
+            print(f"You have already tried this coordinate! you have {no_of_attempts} shots left.")
+        elif target_grid[player_try[0]][player_try[1]] == 'X':
+            print(f"Target hit! you have {no_of_attempts} shots left.")
+            no_of_hits += 1
+            no_of_attempts -= 1
+            player_grid[player_try[0]][player_try[1]] = 'X'
+        else:
+            print(f"Target Missed! you have {no_of_attempts} shots left.")
+            no_of_attempts -= 1
+            player_grid[player_try[0]][player_try[1]] = 'O'
 
-
-target_grid = create_grid(9)
-player_grid = create_grid(9)
-no_of_ships = 1
-no_of_attempts = 5
-no_of_hits = 0
-put_ships(target_grid)
-print_grid(target_grid)
-
-
-
-
-while no_of_attempts > 0:
+def print_endgame():
     if no_of_hits == no_of_ships:
-        break
-    print('    1   2   3   4   5   6   7   8   9')
-    print_grid(player_grid)
-    player_try=player_guess()
-    if player_grid[player_try[0]][player_try[1]] == 'X':
-        print(f"You have already hit this ship! you have {no_of_attempts} shots left.")
-    elif player_grid[player_try[0]][player_try[1]] == 'O':
-        print(f"You have already tried this coordinate! you have {no_of_attempts} shots left.")
-    elif target_grid[player_try[0]][player_try[1]] == 'X':
-        print(f"Target hit! you have {no_of_attempts} shots left.")
-        no_of_hits += 1
-        no_of_attempts -= 1
-        player_grid[player_try[0]][player_try[1]] = 'X'
+        print(f"Congratulations you have sunk all the ships!")
     else:
-        print(f"Target Missed! you have {no_of_attempts} shots left.")
-        no_of_attempts -= 1
-        player_grid[player_try[0]][player_try[1]] = 'O'
+        print(f"you sunk {no_of_hits} out of {no_of_ships} ships, better luck next time")
 
-# end of game message
+play_game()
+print_endgame()
