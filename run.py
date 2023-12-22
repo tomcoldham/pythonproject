@@ -37,9 +37,9 @@ while no_of_attempts > 0:
     print_grid(player_grid)
     player_try=player_guess()
     if player_grid[player_try[0]][player_try[1]] == 'X':
-        print("You have already sunk this ship!")
+        print(f"You have already hit this ship! you have {no_of_attempts} shots left.")
     elif player_grid[player_try[0]][player_try[1]] == 'O':
-        print("You have already tried this co-ordinate")
+        print(f"You have already tried this coordinate! you have {no_of_attempts} shots left.")
     elif target_grid[player_try[0]][player_try[1]] == 'X':
         print(f"Target hit! you have {no_of_attempts} shots left.")
         no_of_attempts -= 1
