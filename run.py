@@ -59,5 +59,17 @@ def print_endgame():
     else:
         print(f"you sunk {no_of_hits} out of {no_of_ships} ships, better luck next time")
 
-play_game()
-print_endgame()
+command = ""
+while True:
+    command = input("> ")
+    if command = "start":
+        play_game()
+        print_endgame()
+    elif command = "quit":
+        exit()
+    elif command = "help":
+        print("""
+        generic test
+        """)
+    else:
+        print("Please enter start, quit or help")
