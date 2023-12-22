@@ -69,7 +69,7 @@ def play_game():
         no_of_attempts = 10
     target_grid = create_grid(9)
     player_grid = create_grid(9)
-    no_of_ships = 1
+    no_of_ships = 10
     # no_of_attempts = 5
     no_of_hits = 0
     put_ships(target_grid)
@@ -105,9 +105,12 @@ def print_endgame():
 command = ""
 print("""
 Welcome to my battleships game!
-To start the game type 'start',
-to exit the game type 'quit'
-and if you need a brief tutorial 
+------------------------------
+To start the game type 'start'
+------------------------------
+To exit the game type 'quit'
+------------------------------
+If you need a brief tutorial 
 on how the game works type 'help'
 """)
 while True:
@@ -119,15 +122,23 @@ while True:
         exit()
     elif command == "help":
         print("""
+*****************
 In battleships you will have a certain
-ammount of shots to take. The aim of the game
-is to correctly guess the coordinates
+ammount of shots to take. 
+
+The aim of the gameis to correctly guess the coordinates
 of the computers randomly placed battleship locations.
+
 Simply type a number for the row,then column and 
-hit enter to guess a location. if you run out of shots before
-all of the ships are found, you lose. 
-If you manage to hit all of the ships before your run out of 
-hits then you win!
-        """)
+hit enter to guess a location. 
+
+if you run out of shots before all of the ships are found, you lose. 
+
+If you manage to hit all of the ships before your run out of hits then you win!
+
+There is also a difficulty level at the start of the game which gives you a choice
+of how many attempts you have to win. The less attempts the harder the game
+*****************
+""")
     else:
         print("Dont recgonise input! Please enter start, quit or help")
