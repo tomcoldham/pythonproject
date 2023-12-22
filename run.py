@@ -15,13 +15,6 @@ def put_ships(grid):
         grid[target_row][target_column] = 'X'
 
 
-
-
-# subtract from guess as grid starts from 0
-    row_guess -= 1
-    column_guess -= 1
-    return row_guess,column_guess
-
 # function for player guessing ships location
 
 def player_guessrow():
@@ -68,20 +61,21 @@ def play_game():
             break
         print('    1   2   3   4   5   6   7   8   9')
         print_grid(player_grid)
-        player_try=player_guess()
-        if player_grid[player_try[0]][player_try[1]] == 'X':
+        player_try_row=player_guessrow()
+        player_try_col=player_guesscol()
+        if player_grid[player_try_row][player_try_col] == 'X':
             print(f"You have already hit this ship! you have {no_of_attempts} shots left.")
-        elif player_grid[player_try[0]][player_try[1]] == 'O':
+        elif player_grid[player_try_row][player_try_col] == 'O':
             print(f"You have already tried this coordinate! you have {no_of_attempts} shots left.")
-        elif target_grid[player_try[0]][player_try[1]] == 'X':
+        elif target_grid[player_try_row][player_try_col] == 'X':
             print(f"Target hit! you have {no_of_attempts} shots left.")
             no_of_hits += 1
             no_of_attempts -= 1
-            player_grid[player_try[0]][player_try[1]] = 'X'
+            player_grid[player_try_row][player_try_col] = 'X'
         else:
             print(f"Target Missed! you have {no_of_attempts} shots left.")
             no_of_attempts -= 1
-            player_grid[player_try[0]][player_try[1]] = 'O'
+            player_grid[player_try_row][player_try_col] = 'O'
 
 def print_endgame():
     global no_of_ships, no_of_hits
