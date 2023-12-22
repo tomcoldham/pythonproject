@@ -37,4 +37,6 @@ if target_grid[player_try[0]][player_try[1]] == 'X':
 else:
     print("Target missed!")
     player_grid[player_try[0]][player_try[1]] = 'O'
+
+print('    1   2   3   4   5   6   7   8   9')
 print_grid(player_grid)
