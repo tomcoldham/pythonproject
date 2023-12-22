@@ -6,7 +6,7 @@ def create_grid(size):
 # function for printing grid
 def print_grid(grid):
     for i, row in enumerate(grid, start=1):
-        print(f"{i} | {' | '.join(row)}")
+        print(f"\033[1;34m{i}\033[0m | {' | '.join(row)}")
     
 # function for placing ships on grid with random number generator
 def put_ships(grid):
@@ -50,7 +50,6 @@ def player_guesscol():
                 return col_guess -1
             else:
                 print("number not in range")
-
 
 def play_game():
     global no_of_ships, no_of_attempts, no_of_hits
