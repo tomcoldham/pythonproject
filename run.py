@@ -63,18 +63,17 @@ def play_game():
     else:
         level = int(selection)
     if level == 1:
-        no_of_attempts = 30
+        no_of_attempts = 70
     if level == 2:
-        no_of_attempts = 20
+        no_of_attempts = 45
     if level == 3:
-        no_of_attempts = 10
+        no_of_attempts = 30
     target_grid = create_grid(9)
     player_grid = create_grid(9)
     no_of_ships = 10
     # no_of_attempts = 5
     no_of_hits = 0
     put_ships(target_grid)
-    print_grid(target_grid)
     while no_of_attempts > 0:
         if no_of_hits == no_of_ships:
             break
@@ -101,7 +100,7 @@ def print_endgame():
     if no_of_hits == no_of_ships:
         print(f"Congratulations you have sunk all the ships!")
     else:
-        print(f"you sunk {no_of_hits} out of {no_of_ships} ships, better luck next time")
+        print(f"You sunk {no_of_hits} out of {no_of_ships} ships, better luck next time!")
 
 command = ""
 print("""
