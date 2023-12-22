@@ -18,6 +18,8 @@ def put_ships(grid):
 def player_guess():
     row_guess = int(input("please enter target guess row number: " ))
     column_guess = int(input("please enter target guess column number: " ))
+    row_guess -= 1
+    column_guess -= 1
     return row_guess,column_guess
 
 target_grid = create_grid(9)
