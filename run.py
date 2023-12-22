@@ -1,3 +1,4 @@
+import random
 # function for creating grid
 def create_grid(size):
     return[['-' for _ in range(size)]for _ in range (size)]
@@ -11,10 +12,11 @@ def print_grid(grid):
 def put_ships(grid):
     for target in range(no_of_ships):
         target_row, target_column = random.randint(0, 8), random.randint(0, 8)
+        grid[target_row][target_column] = 'X'
 
 # function for player guessing ships locationdef player_guess():
 
 target_grid = create_grid(9)
-print_grid(target_grid)
 no_of_ships = 5
 put_ships(target_grid)
+print_grid(target_grid)
