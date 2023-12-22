@@ -77,7 +77,7 @@ def play_game():
     while no_of_attempts > 0:
         if no_of_hits == no_of_ships:
             break
-        print('    1   2   3   4   5   6   7   8   9')
+        print("\033[1;34m    1   2   3   4   5   6   7   8   9\033[0m")
         print_grid(player_grid)
         player_try_row=player_guessrow()
         player_try_col=player_guesscol()
