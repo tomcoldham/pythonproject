@@ -23,12 +23,12 @@ def player_guess():
     column_guess -= 1
     return row_guess,column_guess
 
-def print_endgame():
+# def print_endgame():
 
 
 target_grid = create_grid(9)
 player_grid = create_grid(9)
-no_of_ships = 5
+no_of_ships = 1
 no_of_attempts = 5
 no_of_hits = 0
 put_ships(target_grid)
@@ -38,6 +38,8 @@ print_grid(target_grid)
 
 
 while no_of_attempts > 0:
+    if no_of_hits == no_of_ships:
+        break
     print('    1   2   3   4   5   6   7   8   9')
     print_grid(player_grid)
     player_try=player_guess()
