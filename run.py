@@ -38,16 +38,18 @@ def player_guesscol():
     valid_col = False
     while not valid_col:
         try:
-            col_guess = int(input("please enter target guess column number: " ))
+            col_input =(input("please enter target guess column number: " ))
+            if col_input.lower() == "quit":
+                exit()
+            col_guess = int(col_input)
         except ValueError:
-            print("Invalid input please enter a number")
+            print("Invalid input, please enter a number or quit")
         else: 
             if 1 <= col_guess <= 9:
                 valid_col = True
                 return col_guess -1
             else:
                 print("number not in range")
-
 
 
 def play_game():
