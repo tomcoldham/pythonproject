@@ -24,6 +24,7 @@ def player_guess():
     return row_guess,column_guess
 
 def play_game():
+    global no_of_ships, no_of_attempts, no_of_hits
     target_grid = create_grid(9)
     player_grid = create_grid(9)
     no_of_ships = 1
@@ -52,6 +53,7 @@ def play_game():
             player_grid[player_try[0]][player_try[1]] = 'O'
 
 def print_endgame():
+    global no_of_ships, no_of_hits
     if no_of_hits == no_of_ships:
         print(f"Congratulations you have sunk all the ships!")
     else:
