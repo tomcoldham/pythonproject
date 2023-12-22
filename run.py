@@ -18,11 +18,13 @@ def put_ships(grid):
 def player_guess():
     row_guess = int(input("please enter target guess row number: " ))
     column_guess = int(input("please enter target guess column number: " ))
+# subtract from guess as grid starts from 0
     row_guess -= 1
     column_guess -= 1
     return row_guess,column_guess
 
 target_grid = create_grid(9)
+player_grid = create_grid(9)
 no_of_ships = 5
 put_ships(target_grid)
 print_grid(target_grid)
@@ -30,4 +32,8 @@ player_try=player_guess()
 
 
 if target_grid[player_try[0]][player_try[1]] == 'X':
-    print("target hit!")
+    print("Target hit!")
+    player_grid[player_try[0]][player_try[1]] = 'X'
+else:
+    print("Target missed!")
+    player_grid[player_try[0]][player_try[1]] = 'O'
