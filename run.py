@@ -14,15 +14,15 @@ def put_ships(grid):
         target_row, target_column = random.randint(0, 8), random.randint(0, 8)
         grid[target_row][target_column] = 'X'
 
-# function for player guessing ships location
-def player_guess():
-    row_guess = int(input("please enter target guess row number: " ))
-    column_guess = int(input("please enter target guess column number: " ))
+
+
 
 # subtract from guess as grid starts from 0
     row_guess -= 1
     column_guess -= 1
     return row_guess,column_guess
+
+# function for player guessing ships location
 
 def player_guessrow():
     valid_row = False
@@ -31,6 +31,28 @@ def player_guessrow():
             row_guess = int(input("please enter target guess row number: " ))
         except ValueError:
             print("Invalid input please enter a number")
+        else: 
+            if 1 <= row_guess <= 9:
+                valid_row = True
+                return row_guess -1
+            else:
+                print("number not in range")
+
+def player_guesscol():
+    valid_col = False
+    while not valid_col:
+        try:
+            col_guess = int(input("please enter target guess column number: " ))
+        except ValueError:
+            print("Invalid input please enter a number")
+        else: 
+            if 1 <= col_guess <= 9:
+                valid_col = True
+                return col_guess -1
+            else:
+                print("number not in range")
+
+
 
 def play_game():
     global no_of_ships, no_of_attempts, no_of_hits
