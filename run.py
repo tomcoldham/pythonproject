@@ -18,10 +18,19 @@ def put_ships(grid):
 def player_guess():
     row_guess = int(input("please enter target guess row number: " ))
     column_guess = int(input("please enter target guess column number: " ))
+
 # subtract from guess as grid starts from 0
     row_guess -= 1
     column_guess -= 1
     return row_guess,column_guess
+
+def player_guessrow():
+    valid_row = False
+    while not valid_row:
+        try:
+            row_guess = int(input("please enter target guess row number: " ))
+        except ValueError:
+            print("Invalid input please enter a number")
 
 def play_game():
     global no_of_ships, no_of_attempts, no_of_hits
