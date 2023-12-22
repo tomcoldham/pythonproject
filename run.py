@@ -21,9 +21,12 @@ def player_guessrow():
     valid_row = False
     while not valid_row:
         try:
-            row_guess = int(input("please enter target guess row number: " ))
+            row_input =(input("please enter target guess row number: " ))
+            if row_input.lower() == "quit":
+                exit()
+            row_guess = int(row_input)
         except ValueError:
-            print("Invalid input please enter a number")
+            print("Invalid input, please enter a number or quit")
         else: 
             if 1 <= row_guess <= 9:
                 valid_row = True
