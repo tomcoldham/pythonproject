@@ -29,19 +29,20 @@ def player_guessrow():
     while not valid_row:
         try:
             row_input =(input("""
-
 Please enter target guess row number: """))
             if row_input.lower() == "quit":
                 exit()
             row_guess = int(row_input)
         except ValueError:
-            print("Invalid input, please enter a number or quit")
+            print("""
+Invalid input, please enter a number or 'quit'""")
         else: 
             if 1 <= row_guess <= grid_size:
                 valid_row = True
                 return row_guess -1
             else:
-                print("Number not in range")
+                print("""
+Number not in range""")
 
 # function for player guessing ships location (columns)
 def player_guesscol():
@@ -55,16 +56,14 @@ Please enter target guess column number: """))
             col_guess = int(col_input)
         except ValueError:
             print("""
-            Invalid input, please enter a number or quit
-            """)
+Invalid input, please enter a number or 'quit'""")
         else: 
             if 1 <= col_guess <= grid_size:
                 valid_col = True
                 return col_guess -1
             else:
                 print("""
-                number not in range
-                """)
+Number not in range""")
 
 #main function to play the game
 def play_game():
@@ -78,7 +77,7 @@ def play_game():
                 exit()
             grid_size = int(grid_input)
         except ValueError:
-            print("Invalid input, please enter a number of quit")
+            print("Invalid input, please enter a number of 'quit'")
         else:
             if 4 <= grid_size <= 9:
                 valid_grid = True
@@ -184,4 +183,4 @@ ammount of shots the user has, the fewer the shots the harder the difficulty!
 *****************
 """)
     else:
-        print("Please enter start, quit or help")
+        print("Please enter 'start', 'quit' or 'help':")
