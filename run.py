@@ -71,7 +71,6 @@ def play_game():
     target_grid = create_grid(9)
     player_grid = create_grid(9)
     no_of_ships = 10
-    # no_of_attempts = 5
     no_of_hits = 0
     put_ships(target_grid)
     while no_of_attempts > 0:
@@ -86,13 +85,13 @@ def play_game():
         elif player_grid[player_try_row][player_try_col] == 'O':
             print(f"You have already tried this coordinate! you have {no_of_attempts} shots left.")
         elif target_grid[player_try_row][player_try_col] == 'X':
+            no_of_attempts -= 1
             print(f"Target hit! you have {no_of_attempts} shots left.")
             no_of_hits += 1
-            no_of_attempts -= 1
             player_grid[player_try_row][player_try_col] = 'X'
         else:
-            print(f"Target Missed! you have {no_of_attempts} shots left.")
             no_of_attempts -= 1
+            print(f"Target Missed! you have {no_of_attempts} shots left.")
             player_grid[player_try_row][player_try_col] = 'O'
 
 def print_endgame():
