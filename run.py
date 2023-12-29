@@ -17,8 +17,9 @@ def put_ships(grid):
     for target in range(no_of_ships):
         target_row, target_column = random.randint(0, 8), random.randint(0, 8)
         grid[target_row][target_column] = 'X'
-
-
+        while grid[target_row][target_column] == 'X':
+            target_row, target_column = random.randint(0, 8), random.randint(0, 8)
+        grid[target_row][target_column] = 'X'
 # function for player guessing ships location
 
 def player_guessrow():
