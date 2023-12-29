@@ -28,7 +28,9 @@ def player_guessrow():
     valid_row = False
     while not valid_row:
         try:
-            row_input =(input("please enter target guess row number: " ))
+            row_input =(input("""
+
+Please enter target guess row number: """))
             if row_input.lower() == "quit":
                 exit()
             row_guess = int(row_input)
@@ -39,25 +41,30 @@ def player_guessrow():
                 valid_row = True
                 return row_guess -1
             else:
-                print("number not in range")
+                print("Number not in range")
 
 # function for player guessing ships location (columns)
 def player_guesscol():
     valid_col = False
     while not valid_col:
         try:
-            col_input =(input("please enter target guess column number: " ))
+            col_input =(input("""
+Please enter target guess column number: """))
             if col_input.lower() == "quit":
                 exit()
             col_guess = int(col_input)
         except ValueError:
-            print("Invalid input, please enter a number or quit")
+            print("""
+            Invalid input, please enter a number or quit
+            """)
         else: 
             if 1 <= col_guess <= grid_size:
                 valid_col = True
                 return col_guess -1
             else:
-                print("number not in range")
+                print("""
+                number not in range
+                """)
 
 #main function to play the game
 def play_game():
@@ -80,9 +87,9 @@ def play_game():
     no_cells = grid_size * grid_size
 #allows player to select difficulty level with varying number of shots
     choose_level = ["1", "2", "3"]
-    selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3) ")
+    selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3): ")
     while selection not in choose_level:
-        selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3) ")
+        selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3): ")
     else:
         level = int(selection)
     if level == 1:
@@ -110,17 +117,21 @@ def play_game():
         player_try_row=player_guessrow()
         player_try_col=player_guesscol()
         if player_grid[player_try_row][player_try_col] == 'X':
-            print(f"You have already hit this ship! you have {no_of_attempts} shots left.")
+            print(f"""
+You have already hit this ship! you have {no_of_attempts} shots left.""")
         elif player_grid[player_try_row][player_try_col] == 'O':
-            print(f"You have already tried this coordinate! you have {no_of_attempts} shots left.")
+            print(f"""
+You have already tried this coordinate! you have {no_of_attempts} shots left.""")
         elif target_grid[player_try_row][player_try_col] == 'X':
             no_of_attempts -= 1
-            print(f"Target hit! you have {no_of_attempts} shots left.")
+            print(f"""
+Target hit! you have {no_of_attempts} shots left.""")
             no_of_hits += 1
             player_grid[player_try_row][player_try_col] = 'X'
         else:
             no_of_attempts -= 1
-            print(f"Target Missed! you have {no_of_attempts} shots left.")
+            print(f"""
+Target Missed! you have {no_of_attempts} shots left.""")
             player_grid[player_try_row][player_try_col] = 'O'
 
 #function to end game once criteria has been met
@@ -130,7 +141,7 @@ def print_endgame():
     if no_of_hits == no_of_ships:
         print(f"Congratulations you have sunk all the ships! If you want to play again type 'start'")
     else:
-        print(f"You sunk {no_of_hits} out of {no_of_ships} ships, better luck next time! type 'start' if you wish to play again")
+        print(f"You sunk {no_of_hits} out of {no_of_ships} ships, better luck next time! type 'start' if you wish to play again.")
 
 #menu for user to start game, display instructions or quit
 command = ""
