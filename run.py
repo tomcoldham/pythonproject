@@ -57,7 +57,7 @@ def player_guesscol():
                 print("number not in range")
 
 def play_game():
-    global no_of_ships, no_of_attempts, no_of_hits
+    global no_of_ships, no_of_attempts, no_of_hits, grid_size
     valid_grid = False
     while not valid_grid:
         try:
@@ -85,15 +85,14 @@ def play_game():
         no_of_attempts = 45
     if level == 3:
         no_of_attempts = 30
-    target_grid = create_grid(9)
-    player_grid = create_grid(9)
+    target_grid = create_grid(grid_size)
+    player_grid = create_grid(grid_size)
     no_of_ships = 10
     no_of_hits = 0
     put_ships(target_grid)
     while no_of_attempts > 0:
         if no_of_hits == no_of_ships:
             break
-        print("\033[1;34m    1   2   3   4   5   6   7   8   9\033[0m")
         print_grid(player_grid)
         player_try_row=player_guessrow()
         player_try_col=player_guesscol()
@@ -112,7 +111,7 @@ def play_game():
             player_grid[player_try_row][player_try_col] = 'O'
 
 def print_endgame():
-    global no_of_ships, no_of_hits
+    global no_of_ships, no_of_hits, grid_size
     if no_of_hits == no_of_ships:
         print(f"Congratulations you have sunk all the ships!")
     else:
