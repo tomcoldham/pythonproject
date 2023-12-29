@@ -15,10 +15,10 @@ def print_grid(grid):
 def put_ships(grid):
     random.seed(time.time())
     for target in range(no_of_ships):
-        target_row, target_column = random.randint(0, 8), random.randint(0, 8)
+        target_row, target_column = random.randint(0, len(grid) - 1), random.randint(0, len(grid) - 1)
         grid[target_row][target_column] = 'X'
         while grid[target_row][target_column] == 'X':
-            target_row, target_column = random.randint(0, 8), random.randint(0, 8)
+            target_row, target_column = random.randint(0, len(grid) - 1), random.randint(0, len(grid) - 1)
         grid[target_row][target_column] = 'X'
 # function for player guessing ships location
 
