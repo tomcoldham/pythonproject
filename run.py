@@ -91,9 +91,11 @@ def play_game():
         no_of_attempts = math.ceil(attempts)
     target_grid = create_grid(grid_size)
     player_grid = create_grid(grid_size)
-    no_of_ships = 10
+    percent_ships = (30 / 100) * no_cells
+    no_of_ships = math.ceil(percent_ships)
     no_of_hits = 0
     put_ships(target_grid)
+    print(f"You have {no_of_ships} battleships to sink!")
     while no_of_attempts > 0:
         if no_of_hits == no_of_ships:
             break
@@ -157,13 +159,6 @@ If you manage to hit all of the ships before your run out of hits then you win!
 
 There is also a difficulty level at the start of the game which gives you a choice
 of how many attempts you have to win. The less attempts the harder the game.
-
-Difficulty 1 = 70 attempts.
-
-Difficulty 2 = 45 attempts.
-
-Difficulty 3 = 30 attempts.
-
 *****************
 """)
     else:
