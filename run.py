@@ -55,6 +55,20 @@ def player_guesscol():
 
 def play_game():
     global no_of_ships, no_of_attempts, no_of_hits
+    valid_grid = False
+    while not valid_grid:
+        try:
+            grid_input=(input("Please enter grid size (between 4 and 9) : " ))
+            if grid_input.lower() == "quit":
+                exit()
+            grid_size = int(grid_input)
+        except ValueError:
+            print("Invalid input, please enter a number of quit")
+        else:
+            if 4 <= grid_size <= 9:
+                valid_grid = True
+            else:
+                print("Grid size must be between 4 and 9")
 
     choose_level = ["1", "2", "3"]
     selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3) ")
