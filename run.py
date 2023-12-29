@@ -73,7 +73,7 @@ def play_game():
                 valid_grid = True
             else:
                 print("Grid size must be between 4 and 9")
-no_cells = grid_size * grid_size
+    no_cells = grid_size * grid_size
     choose_level = ["1", "2", "3"]
     selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3) ")
     while selection not in choose_level:
