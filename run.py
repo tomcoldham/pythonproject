@@ -1,6 +1,7 @@
 import random
 import time
 import math
+
 # function for creating grid
 def create_grid(size):
     return[['-' for _ in range(size)]for _ in range (size)]
@@ -12,7 +13,7 @@ def print_grid(grid):
     for i, row in enumerate(grid, start=1):
         print(f"\033[1;34m{i}\033[0m | {' | '.join(row)}")
     
-# function for placing ships on grid with random number generator
+# function for placing ships on grid with random number generator, based on size of grid
 def put_ships(grid):
     random.seed(time.time())
     for target in range(no_of_ships):
@@ -21,8 +22,8 @@ def put_ships(grid):
         while grid[target_row][target_column] == 'X':
             target_row, target_column = random.randint(0, len(grid) - 1), random.randint(0, len(grid) - 1)
         grid[target_row][target_column] = 'X'
-# function for player guessing ships location
 
+# function for player guessing ships location (rows)
 def player_guessrow():
     valid_row = False
     while not valid_row:
@@ -40,6 +41,7 @@ def player_guessrow():
             else:
                 print("number not in range")
 
+# function for player guessing ships location (columns)
 def player_guesscol():
     valid_col = False
     while not valid_col:
@@ -57,8 +59,10 @@ def player_guesscol():
             else:
                 print("number not in range")
 
+#main function to play the game
 def play_game():
     global no_of_ships, no_of_attempts, no_of_hits, grid_size
+#allows player to chose a grid size
     valid_grid = False
     while not valid_grid:
         try:
@@ -74,6 +78,7 @@ def play_game():
             else:
                 print("Grid size must be between 4 and 9")
     no_cells = grid_size * grid_size
+#allows player to select difficulty level with varying number of shots
     choose_level = ["1", "2", "3"]
     selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3) ")
     while selection not in choose_level:
@@ -89,6 +94,7 @@ def play_game():
     if level == 3:
         attempts = (50 / 100) * no_cells
         no_of_attempts = math.ceil(attempts)
+#setup the grids on the terminal
     target_grid = create_grid(grid_size)
     player_grid = create_grid(grid_size)
     percent_ships = (30 / 100) * no_cells
@@ -96,6 +102,7 @@ def play_game():
     no_of_hits = 0
     put_ships(target_grid)
     print(f"You have {no_of_ships} battleships to sink!")
+#loops for playing game depending on number of attempts and ships left
     while no_of_attempts > 0:
         if no_of_hits == no_of_ships:
             break
@@ -116,6 +123,7 @@ def play_game():
             print(f"Target Missed! you have {no_of_attempts} shots left.")
             player_grid[player_try_row][player_try_col] = 'O'
 
+#function to end game once criteria has been met
 def print_endgame():
     global no_of_ships, no_of_hits, grid_size
     if no_of_hits == no_of_ships:
@@ -123,6 +131,7 @@ def print_endgame():
     else:
         print(f"You sunk {no_of_hits} out of {no_of_ships} ships, better luck next time!")
 
+#menu for user to start game, display instructions or quit
 command = ""
 print("""
 Welcome to my battleships game!
