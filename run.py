@@ -57,9 +57,9 @@ def play_game():
     global no_of_ships, no_of_attempts, no_of_hits
 
     choose_level = ["1", "2", "3"]
-    selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3)")
+    selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3) ")
     while selection not in choose_level:
-        selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3)")
+        selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3) ")
     else:
         level = int(selection)
     if level == 1:
@@ -125,19 +125,26 @@ while True:
 In battleships you will have a certain
 ammount of shots to take. 
 
-The aim of the gameis to correctly guess the coordinates
+The aim of the gamee is to correctly guess the coordinates
 of the computers randomly placed battleship locations.
 
 Simply type a number for the row,then column and 
 hit enter to guess a location. 
 
-if you run out of shots before all of the ships are found, you lose. 
+If you run out of shots before all of the ships are found, you lose. 
 
 If you manage to hit all of the ships before your run out of hits then you win!
 
 There is also a difficulty level at the start of the game which gives you a choice
-of how many attempts you have to win. The less attempts the harder the game
+of how many attempts you have to win. The less attempts the harder the game.
+
+Difficulty 1 = 70 attempts.
+
+Difficulty 2 = 45 attempts.
+
+Difficulty 3 = 30 attempts.
+
 *****************
 """)
     else:
-        print("Dont recgonise input! Please enter start, quit or help")
+        print("Please enter start, quit or help")
