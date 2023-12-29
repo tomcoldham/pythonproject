@@ -29,7 +29,7 @@ def player_guessrow():
     while not valid_row:
         try:
             row_input =(input("""
-Please enter target guess row number: """))
+Please enter target guess row number:\n """))
             if row_input.lower() == "quit":
                 exit()
             row_guess = int(row_input)
@@ -50,7 +50,7 @@ def player_guesscol():
     while not valid_col:
         try:
             col_input =(input("""
-Please enter target guess column number: """))
+Please enter target guess column number:\n """))
             if col_input.lower() == "quit":
                 exit()
             col_guess = int(col_input)
@@ -72,7 +72,7 @@ def play_game():
     valid_grid = False
     while not valid_grid:
         try:
-            grid_input=(input("Please enter grid size (between 4 and 9) : " ))
+            grid_input=(input("Please enter grid size (between 4 and 9) :\n " ))
             if grid_input.lower() == "quit":
                 exit()
             grid_size = int(grid_input)
@@ -86,9 +86,9 @@ def play_game():
     no_cells = grid_size * grid_size
 #allows player to select difficulty level with varying number of shots
     choose_level = ["1", "2", "3"]
-    selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3): ")
+    selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3):\n ")
     while selection not in choose_level:
-        selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3): ")
+        selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3):\n ")
     else:
         level = int(selection)
     if level == 1:
@@ -155,7 +155,7 @@ If you need a brief tutorial
 on how the game works type 'help'
 """)
 while True:
-    command = input("> ").lower()
+    command = input(">\n ").lower()
     if command == "start":
         play_game()
         print_endgame()
