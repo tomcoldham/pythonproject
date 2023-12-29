@@ -6,6 +6,8 @@ def create_grid(size):
 
 # function for printing grid
 def print_grid(grid):
+    header = "-   " + "   ".join(map(str, range(1, len(grid) + 1)))
+    print(header)
     for i, row in enumerate(grid, start=1):
         print(f"\033[1;34m{i}\033[0m | {' | '.join(row)}")
     
