@@ -1,5 +1,6 @@
 import random
 import time
+import math
 # function for creating grid
 def create_grid(size):
     return[['-' for _ in range(size)]for _ in range (size)]
@@ -72,7 +73,7 @@ def play_game():
                 valid_grid = True
             else:
                 print("Grid size must be between 4 and 9")
-
+no_cells = grid_size * grid_size
     choose_level = ["1", "2", "3"]
     selection = input("Input your diffculty level: Beginner (1), Intermediate (2), Advanced (3) ")
     while selection not in choose_level:
@@ -80,11 +81,14 @@ def play_game():
     else:
         level = int(selection)
     if level == 1:
-        no_of_attempts = 70
+        attempts = (90 / 100) * no_cells
+        no_of_attempts = math.ceil(attempts)
     if level == 2:
-        no_of_attempts = 45
+        attempts = (70 / 100) * no_cells
+        no_of_attempts = math.ceil(attempts)
     if level == 3:
-        no_of_attempts = 30
+        attempts = (50 / 100) * no_cells
+        no_of_attempts = math.ceil(attempts)
     target_grid = create_grid(grid_size)
     player_grid = create_grid(grid_size)
     no_of_ships = 10
