@@ -61,7 +61,7 @@ def player_guesscol():
 
 #main function to play the game
 def play_game():
-    global no_of_ships, no_of_attempts, no_of_hits, grid_size
+    global no_of_ships, no_of_attempts, no_of_hits, grid_size, player_grid
 #allows player to chose a grid size
     valid_grid = False
     while not valid_grid:
@@ -124,10 +124,11 @@ def play_game():
             player_grid[player_try_row][player_try_col] = 'O'
 
 #function to end game once criteria has been met
+global no_of_ships, no_of_hits, grid_size, player_grid
 def print_endgame():
-    global no_of_ships, no_of_hits, grid_size
+    print_grid(player_grid)
     if no_of_hits == no_of_ships:
-        print(f"Congratulations you have sunk all the ships!")
+        print(f"Congratulations you have sunk all the ships! If you want to play again type 'start'")
     else:
         print(f"You sunk {no_of_hits} out of {no_of_ships} ships, better luck next time!")
 
@@ -156,7 +157,7 @@ while True:
 In battleships you will have a certain
 ammount of shots to take. 
 
-The aim of the gamee is to correctly guess the coordinates
+The aim of the game is to correctly guess the coordinates
 of the computers randomly placed battleship locations.
 
 Simply type a number for the row,then column and 
@@ -166,8 +167,9 @@ If you run out of shots before all of the ships are found, you lose.
 
 If you manage to hit all of the ships before your run out of hits then you win!
 
-There is also a difficulty level at the start of the game which gives you a choice
-of how many attempts you have to win. The less attempts the harder the game.
+The grid size can be altered which will change the ammount of ships, there will
+also be a difficulty level that can be selected by the user which changes the 
+ammount of shots the user has, the fewer the shots the harder the difficulty!
 *****************
 """)
     else:
