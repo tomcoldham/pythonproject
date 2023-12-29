@@ -33,7 +33,7 @@ def player_guessrow():
         except ValueError:
             print("Invalid input, please enter a number or quit")
         else: 
-            if 1 <= row_guess <= 9:
+            if 1 <= row_guess <= grid_size:
                 valid_row = True
                 return row_guess -1
             else:
@@ -50,7 +50,7 @@ def player_guesscol():
         except ValueError:
             print("Invalid input, please enter a number or quit")
         else: 
-            if 1 <= col_guess <= 9:
+            if 1 <= col_guess <= grid_size:
                 valid_col = True
                 return col_guess -1
             else:
