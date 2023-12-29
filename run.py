@@ -138,9 +138,13 @@ global no_of_ships, no_of_hits, grid_size, player_grid
 def print_endgame():
     print_grid(player_grid)
     if no_of_hits == no_of_ships:
-        print(f"Congratulations you have sunk all the ships! If you want to play again type 'start'")
+        print(f"""
+Congratulations you have sunk all the ships! 
+If you want to play again type 'start'""")
     else:
-        print(f"You sunk {no_of_hits} out of {no_of_ships} ships, better luck next time! type 'start' if you wish to play again.")
+      "  print(f""
+You sunk {no_of_hits} out of {no_of_ships} ships, better luck next time!
+type 'start' if you wish to play again.""")
 
 #menu for user to start game, display instructions or quit
 command = ""
