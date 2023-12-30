@@ -1,12 +1,13 @@
 import random
 import time
 import math
+import sys
 
 # function for creating grid
 
 
 def create_grid(size):
-    return [['-' for _ in range(size)]for _ in range(size)]
+    return [['-' for _ in range(size)] for _ in range(size)]
 
 # function for printing grid
 
@@ -38,23 +39,19 @@ def player_guessrow():
     valid_row = False
     while not valid_row:
         try:
-            row_input = (input("""
-Please enter target guess row number:\n """))
+            row_input = input("""
+Please enter target guess row number:
+""")
             if row_input.lower() == "quit":
-                exit()
+                sys.exit()
             row_guess = int(row_input)
+            if 1 <= row_guess <= grid_size:
+                valid_row = True
+            else:
+                print("Number not in range")
         except ValueError:
-            print("""
-Invalid input, please enter a number or 'quit'""")
-
-
-else:
-    if 1 <= row_guess <= grid_size:
-        valid_row = True
+            print("Invalid input, please enter a number or 'quit'")
     return row_guess - 1
-    else:
-        print("""
-Number not in range""")
 
 # function for player guessing ships location (columns)
 
@@ -63,56 +60,56 @@ def player_guesscol():
     valid_col = False
     while not valid_col:
         try:
-            col_input = (input("""
-Please enter target guess column number:\n """))
+            col_input = input("""
+Please enter target guess column number:
+""")
             if col_input.lower() == "quit":
-                exit()
+                sys.exit()
             col_guess = int(col_input)
-        except ValueError:
-            print("""
-Invalid input, please enter a number or 'quit'""")
-        else:
             if 1 <= col_guess <= grid_size:
                 valid_col = True
-                return col_guess - 1
             else:
-                print("""
-Number not in range""")
+                print("Number not in range")
+        except ValueError:
+            print("Invalid input, please enter a number or 'quit'")
+    return col_guess - 1
 
 # main function to play the game
 
 
 def play_game():
     global no_of_ships, no_of_attempts, no_of_hits, grid_size, player_grid
-# allows player to chose a grid size
+    # allows player to choose a grid size
+
     valid_grid = False
     while not valid_grid:
         try:
-            grid_input = (input("Enter grid size (between 4 and 9) :\n "))
+            grid_input = input("Enter grid size (between 4 and 9):\n ")
             if grid_input.lower() == "quit":
-                exit()
+                sys.exit()
             grid_size = int(grid_input)
-        except ValueError:
-            print("Invalid input, please enter a number of 'quit'")
-        else:
             if 4 <= grid_size <= 9:
                 valid_grid = True
             else:
                 print("Grid size must be between 4 and 9")
+        except ValueError:
+            print("Invalid input, please enter a number or 'quit'")
     no_cells = grid_size * grid_size
 # allows player to select difficulty level with varying number of shots
 
     choose_level = ["1", "2", "3"]
     selection = input("""
-Input your diffculty level: Beginner (1)
+Input your difficulty level:
+Beginner (1)
 Intermediate (2)
 Advanced (3):\n
-    """)
+""")
     while selection not in choose_level:
-        selection = input("""Input your diffculty level: Beginner (1)
+        selection = input("""Input your difficulty level:
+        Beginner (1)
         Intermediate (2)
-        Advanced (3):\n
-        """)
+        Advanced (3)\n
+""")
     else:
         level = int(selection)
     if level == 1:
@@ -124,7 +121,7 @@ Advanced (3):\n
     if level == 3:
         attempts = (50 / 100) * no_cells
         no_of_attempts = math.ceil(attempts)
-# setup the grids on the terminal
+    # setup the grids on the terminal
 
     target_grid = create_grid(grid_size)
     player_grid = create_grid(grid_size)
@@ -133,7 +130,7 @@ Advanced (3):\n
     no_of_hits = 0
     put_ships(target_grid)
     print(f"You have {no_of_ships} battleships to sink!")
-# loops for playing game depending on number of attempts and ships left
+    # loops for playing the game based on the number of attempts and ships left
 
     while no_of_attempts > 0:
         if no_of_hits == no_of_ships:
@@ -163,7 +160,7 @@ Target hit! you have {no_of_attempts} shots left.""")
 Target Missed! you have {no_of_attempts} shots left.""")
             player_grid[player_try_row][player_try_col] = 'O'
 
-# function to end game once criteria has been met
+# function to end the game once criteria have been met
 
 
 global no_of_ships, no_of_hits, grid_size, player_grid
@@ -173,8 +170,8 @@ def print_endgame():
     print_grid(player_grid)
     if no_of_hits == no_of_ships:
         print("""
-Congratulations you have sunk all the ships!
-If you want to play again type 'start'
+Congratulations, you have sunk all the ships!
+If you want to play again, type 'start'
 """)
     else:
         print(f"""
@@ -200,25 +197,25 @@ while True:
         play_game()
         print_endgame()
     elif command == "quit":
-        exit()
+        sys.exit()
     elif command == "help":
         print("""
 *****************
-In battleships you will have a certain ammount of shots to take.
+In battleships you will have a certain amount of shots to take.
 
 The aim of the game is to correctly guess the coordinates
-of the computers randomly placed battleship locations.
+of the computer's randomly placed battleship locations.
 
-Simply type a number for the row,then column and hit enter to guess a location.
+Type a number for the row, then column and hit enter to guess a location.
 
 If you run out of shots before all of the ships are found, you lose.
 
-If you manage to hit all of the ships before your run out of hits then you win!
+If you manage to hit all of the ships before you run out of hits then you win!
 
-The grid size can be altered which will change the ammount of ships, there will
+The grid size can be altered which will change the amount of ships, there will
 also be a difficulty level that can be selected by the user which changes the
-ammount of shots the user has, the fewer the shots the harder the difficulty!
+amount of shots the user has, the fewer the shots the harder the difficulty!
 *****************
 """)
-else:
-    print("Please enter 'start', 'quit' or 'help':")
+    else:
+        print("Please enter 'start', 'quit' or 'help':")
