@@ -13,27 +13,40 @@ the location of the battleships and sink them all before they run out of shots.
 
 - To give users feedback on the game, the total number of ships that need to be sunk is shown at the start of the game and the ammount of shots they have left is also shown each time they take a shot.
 
+![ships](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythongrid.PNG)
+
 - Further user experience has been added with a live grid of the ships they have sunk, 'X' will display a location with a sunk ship. 'O' will be displayed with the location of a coordinate that was fired at but no ship was hit.
+
+![shiphit](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythonhit.PNG)
+
+![shipmiss](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythonmiss.PNG)
 
 - The difference between the difficulty is the number of shots each player has. The more shots a player has then the more chances they have at guesssing all the ship locations correctly thus winning the game.
 
 - A menu has also been implemented at the start of the game which gives players clear instructions on how to play the game also gives them the option to start the game or quit. Players can also quit out at any time during the game if they wish to do so.
 
+![Menu](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythonmenu.PNG)
+
 ## Testing
 
 - Extensive testing has been done to make sure that the player cannot cause the game to crash or bug out, this has been done by making the input selective through out all of the project and also displaying helpful error messages when a player enters a command in wrong, for example entering a letter when a number is required for the coordinate of their guess.
 
+![Input](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythonerror.PNG)
+
 - Additional input parameters have been added so that the player cannot guess the same coordinate, or cannot guess a number that isn't in the grid. 
 
+![Repeat](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythonrepeat.PNG)
+
 - The game is functioning as intended and completes when it should for example when the player hits all the ships or if they run out of ammo.
+
+![end](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythonfail.PNG)
 
 ### Validator Testing
 
 Code has been validated and no errors have been found, also found the code when deployed in heroku performs as expected.
 
 
-![Testing]
-![Testing]
+![Testing](https://github.com/tomcoldham/pythonproject/blob/main/assets/validation.PNG)
 
 
 ### Unfixed Bugs
