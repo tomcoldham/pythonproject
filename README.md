@@ -44,8 +44,7 @@ the location of the battleships and sink them all before they run out of shots.
 Code has been validated and no errors have been found, also found the code when deployed in heroku performs as expected.
 
 
-![Testing](https://github.com/tomcoldham/pythonproject/blob/main/assets/validation.PNG)
-
+![Testing](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythonpep.PNG)
 
 ### Unfixed Bugs
 
