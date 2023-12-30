@@ -25,11 +25,12 @@ def put_ships(grid):
     for target in range(no_of_ships):
         target_row = random.randint(0, len(grid) - 1)
         target_column = random.randint(0, len(grid) - 1)
-    grid[target_row][target_column] = 'X'
-    while grid[target_row][target_column] == 'X':
-        target_row = random.randint(0, len(grid) - 1)
-        target_column = random.randint(0, len(grid) - 1)
-    grid[target_row][target_column] = 'X'
+        while grid[target_row][target_column] == 'X':
+            target_row = random.randint(0, len(grid) - 1)
+            target_column = random.randint(0, len(grid) - 1)
+
+        grid[target_row][target_column] = 'X'
+
 # function for player guessing ships location (rows)
 
 
@@ -127,6 +128,7 @@ Advanced (3)\n
     no_of_ships = math.ceil(percent_ships)
     no_of_hits = 0
     put_ships(target_grid)
+    print_grid(target_grid)
     print(f"You have {no_of_ships} battleships to sink!")
     # loops for playing the game based on the number of attempts and ships left
 
