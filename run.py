@@ -22,7 +22,6 @@ def print_grid(grid):
 
 
 def put_ships(grid):
-    random.seed(time.time())
     for target in range(no_of_ships):
         target_row = random.randint(0, len(grid) - 1)
         target_column = random.randint(0, len(grid) - 1)
