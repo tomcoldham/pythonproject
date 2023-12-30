@@ -72,7 +72,7 @@ def play_game():
     valid_grid = False
     while not valid_grid:
         try:
-            grid_input=(input("Please enter grid size (between 4 and 9) :\n " ))
+            grid_input=(input("Please enter grid size (between 4 and 9) :\n "))
             if grid_input.lower() == "quit":
                 exit()
             grid_size = int(grid_input)

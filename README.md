@@ -21,8 +21,6 @@ the location of the battleships and sink them all before they run out of shots.
 
 ![shipmiss](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythonmiss.PNG)
 
-- The difference between the difficulty is the number of shots each player has. The more shots a player has then the more chances they have at guesssing all the ship locations correctly thus winning the game.
-
 - A menu has also been implemented at the start of the game which gives players clear instructions on how to play the game also gives them the option to start the game or quit. Players can also quit out at any time during the game if they wish to do so.
 
 ![Menu](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythonmenu.PNG)
