@@ -1,32 +1,64 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleships game!
 
-Welcome,
+Welcome to my version of the infamous battleships game that i made using Python. It is a single player game against the computer where users will have to guess
+the location of the battleships and sink them all before they run out of shots.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **March 14, 2023**
+## Features
 
-## Reminders
+- The Premise of the game is simple, all you have to do is destroy all of the ships by correctly guessing the coordinates before you run out of shots.
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
+- Certain precautions have been implemented into the game to make it consistent, for example an equation has been used so that the ammount of ships will be roughly 1/3 of the total number of squares. This consistency also translates to the ammount of shots each player has also depending on the difficulty.
+  
+- Users can choose their own map grid from 4-9 sqaures for a different experience, they also have the option to increase the difficulty from a choice of 3 different options. Beginner difficulty will have about 90% of the sqaures available as shots, intermediate will be 70% and then advanced will be 50%. The more shots a player has then the more chances they have at guesssing all the ship locations correctly thus winning the game.
 
-## Creating the Heroku app
+- To give users feedback on the game, the total number of ships that need to be sunk is shown at the start of the game and the ammount of shots they have left is also shown each time they take a shot.
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+- Further user experience has been added with a live grid of the ships they have sunk, 'X' will display a location with a sunk ship. 'O' will be displayed with the location of a coordinate that was fired at but no ship was hit.
 
-1. `heroku/python`
-2. `heroku/nodejs`
+- The difference between the difficulty is the number of shots each player has. The more shots a player has then the more chances they have at guesssing all the ship locations correctly thus winning the game.
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+- A menu has also been implemented at the start of the game which gives players clear instructions on how to play the game also gives them the option to start the game or quit. Players can also quit out at any time during the game if they wish to do so.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+## Testing
 
-Connect your GitHub repository and deploy as normal.
+- Extensive testing has been done to make sure that the player cannot cause the game to crash or bug out, this has been done by making the input selective through out all of the project and also displaying helpful error messages when a player enters a command in wrong, for example entering a letter when a number is required for the coordinate of their guess.
 
-## Constraints
+- Additional input parameters have been added so that the player cannot guess the same coordinate, or cannot guess a number that isn't in the grid. 
 
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
+- The game is functioning as intended and completes when it should for example when the player hits all the ships or if they run out of ammo.
 
----
+### Validator Testing
 
-Happy coding!
+Code has been validated and no errors have been found, also found the code when deployed in heroku performs as expected.
+
+
+![Testing](https://github.com/tomcoldham/quizproject2/blob/main/assets/images/project2htmlcheck.PNG)
+
+![Testing](https://github.com/tomcoldham/quizproject2/blob/main/assets/images/csscheckproject2.PNG)
+
+
+### Unfixed Bugs
+
+- No unfixed bugs were found in this project.
+
+## Deployment
+
+- The site was deployed to GitHub pages. And then launched from heroku The steps to deploy are as follows:
+  - First i pushed everything to github.
+  - Then i linked my github account to heroku.
+  - I created a new app in Heroku and under 'deployment' i used 'connect to github'.
+  - I searched for the name of the repository from github.
+  - heroku then deployed a live version of my project.
+  
+The live link can be found here - https://tomc-codeinstitute-project3-8eca0d08e62e.herokuapp.com/
+
+## Credits
+
+### Content
+- Some code has been inspired from other battleship games found online.
+Though i have tried my upmost to keep the code original 
+and add my own features into the game.
+
+### Media
+
+- No media was used for this project.
