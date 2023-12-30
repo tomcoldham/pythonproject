@@ -5,11 +5,11 @@ the location of the battleships and sink them all before they run out of shots.
 
 ## Features
 
-- The Premise of the game is simple, all you have to do is destroy all of the ships by correctly guessing the coordinates before you run out of shots.
-
 - Certain precautions have been implemented into the game to make it consistent, for example an equation has been used so that the ammount of ships will be roughly 1/3 of the total number of squares. This consistency also translates to the ammount of shots each player has also depending on the difficulty.
   
 - Users can choose their own map grid from 4-9 sqaures for a different experience, they also have the option to increase the difficulty from a choice of 3 different options. Beginner difficulty will have about 90% of the sqaures available as shots, intermediate will be 70% and then advanced will be 50%. The more shots a player has then the more chances they have at guesssing all the ship locations correctly thus winning the game.
+
+![customize](https://github.com/tomcoldham/pythonproject/blob/main/assets/pythondifficulty.PNG)
 
 - To give users feedback on the game, the total number of ships that need to be sunk is shown at the start of the game and the ammount of shots they have left is also shown each time they take a shot.
 
