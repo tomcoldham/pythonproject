@@ -128,7 +128,6 @@ Advanced (3)\n
     no_of_ships = math.ceil(percent_ships)
     no_of_hits = 0
     put_ships(target_grid)
-    print_grid(target_grid)
     print(f"You have {no_of_ships} battleships to sink!")
     # loops for playing the game based on the number of attempts and ships left
 
