@@ -24,14 +24,13 @@ def print_grid(grid):
 def put_ships(grid):
     random.seed(time.time())
     for target in range(no_of_ships):
-        target_row, target_column = random.randint(0, len(grid) - 1),
-        random.randint(0, len(grid) - 1)
-        grid[target_row][target_column] = 'X'
-        while grid[target_row][target_column] == 'X':
-            target_row, target_column = random.randint(0, len(grid) - 1),
-            random.randint(0, len(grid) - 1)
-        grid[target_row][target_column] = 'X'
-
+        target_row = random.randint(0, len(grid) - 1)
+        target_column = random.randint(0, len(grid) - 1)
+    grid[target_row][target_column] = 'X'
+    while grid[target_row][target_column] == 'X':
+        target_row = random.randint(0, len(grid) - 1)
+        target_column = random.randint(0, len(grid) - 1)
+    grid[target_row][target_column] = 'X'
 # function for player guessing ships location (rows)
 
 
@@ -102,7 +101,7 @@ def play_game():
 Input your difficulty level:
 Beginner (1)
 Intermediate (2)
-Advanced (3):\n
+Advanced (3)\n
 """)
     while selection not in choose_level:
         selection = input("""Input your difficulty level:
