@@ -32,9 +32,8 @@ the location of the battleships and sink them all before they run out of shots.
 Code has been validated and no errors have been found, also found the code when deployed in heroku performs as expected.
 
 
-![Testing](https://github.com/tomcoldham/quizproject2/blob/main/assets/images/project2htmlcheck.PNG)
-
-![Testing](https://github.com/tomcoldham/quizproject2/blob/main/assets/images/csscheckproject2.PNG)
+![Testing]
+![Testing]
 
 
 ### Unfixed Bugs
